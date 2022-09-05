@@ -1,18 +1,12 @@
-#First, we set the student count as a variable
-student_count = 11
-#Next, we print the list of students
-puts "The students of Villains Academy"
+#First, we put all student names in an array
+students = [ "Dr. Hannibal Lector", "Darth Vader", "Nurse Ratched", "Michael Corleone",
+    "Alex DeLarge", "The Wicked Witch of the West", "Terminator","Freddy Krueger", 
+    "The Joker", "Joffrey Baratheon", "Norman Bates"]
+#Then, we iterate over the array to 'puts' each name
+puts "The students of Villain Academy"
 puts "-------------"
-puts "Dr. Hannibal Lector"
-puts "Darth Vader"
-puts "Nurse Ratched"
-puts "Michael Corleone"
-puts "Alex DeLarge"
-puts "The Wicked Witch of the West"
-puts "Terminator"
-puts "Freddy Krueger"
-puts "The Joker"
-puts "Joffrey Baratheon"
-puts "Norman Bates"
-#Then, using string interpolation, we detail the student count
-puts "Overall, we have #{student_count} students"
+puts students.each do |name|
+  puts name
+end
+#Finally, we print the number of students in our array using string interpolation
+puts "Overall, we have #{students.count} great students"
