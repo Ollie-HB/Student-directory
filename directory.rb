@@ -1,14 +1,18 @@
-#First, we put all student names and in an array of hashes
-student_data = [
-{name: "Dr. Hannibal Lector", cohort: :november}, {name: "Darth Vader", cohort: :november}, 
-{name: "Nurse Ratched", cohort: :november}, {name: "Michael Corleone", cohort: :november},
-{name: "Alex DeLarge", cohort: :november}, {name: "The Wicked Witch of the West", cohort: :november},
-{name: "Terminator", cohort: :november}, {name: "Freddy Krueger", cohort: :november}, 
-{name: "The Joker", cohort: :november}, {name: "Joffrey Baratheon", cohort: :november},
-{name: "Norman Bates", cohort: :november}
-]
+#First, we write an input method, then further methods to get our desired output
+def input_students
+  puts "Please enter the names of the students"
+  puts "To finish, just hit return twice"
+  students = []
+  name = gets.chomp
 
-#Then, we define methods to make the code easier to read
+    while !name.empty? do 
+    students << {name: name, cohort: :november}
+    puts "Now we have #{students.count} students"
+    name = gets.chomp
+    end
+  students
+end
+
   def print_header
   puts "The students of Villain Academy"
   puts "-------------"
@@ -25,6 +29,7 @@ puts "Overall, we have #{students.count} great students"
   end
 
   #Finally, we call the methods
+  students = input_students
   print_header
-  print(student_data)
-  print_footer(student_data)
+  print(students)
+  print_footer(students)
